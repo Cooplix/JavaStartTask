@@ -34,4 +34,19 @@ public class Cabrio {
         }
     }
 
+    public void openRoof() {
+        if(!isRoofOpen) {
+            if(isMove)
+                System.out.printf("%s in motion, roof cannot be opened\n", carName);
+
+            if (!isRoofOpen && !isMove) {
+                System.out.printf("%s roof opened...\n", carName);
+                isRoofOpen = true;
+            }
+        }
+        else if(isRoofOpen && !isMove){
+            System.out.printf("%s roof is already open\n", carName);
+        }
+    }
+
 }
