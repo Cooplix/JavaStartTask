@@ -12,9 +12,6 @@ import java.io.PrintStream;
 public class CabrioTest extends TestCase {
     private ByteArrayOutputStream output;
     private PrintStream old;
-    private Cabrio cabrioTest = new Cabrio("TestName", "testBrend", false);
-
-
 
 //    @Before
 //    public void setUpStreams() {
@@ -32,6 +29,7 @@ public class CabrioTest extends TestCase {
 
     @Test
     public void testCarRunIsCarStop() {
+        Cabrio cabrioTest = new Cabrio("TestName", "testBrend", false);
         output = new ByteArrayOutputStream();
         PrintStream stream = new PrintStream(output);
         System.setOut(stream);
@@ -39,7 +37,7 @@ public class CabrioTest extends TestCase {
         cabrioTest.run();
         String result = output.toString();
 
-        String template = "TestName run...";
+        String template = "TestName run...\n";
 
         Assert.assertEquals(template, result);
 
@@ -48,7 +46,7 @@ public class CabrioTest extends TestCase {
 
     @Test
     public void testCarRunIsCarRun() {
-
+        Cabrio cabrioTest = new Cabrio("TestName", "testBrend", false);
         output = new ByteArrayOutputStream();
         PrintStream stream = new PrintStream(output);
         System.setOut(stream);
@@ -57,7 +55,7 @@ public class CabrioTest extends TestCase {
         cabrioTest.run();
         String result = output.toString();
 
-        String template = "TestName now running";
+        String template = "TestName now running\n";
 
         Assert.assertEquals(template, result);
 
@@ -67,6 +65,7 @@ public class CabrioTest extends TestCase {
 
     @Test
     public void testCarStopIsCarStop() {
+        Cabrio cabrioTest = new Cabrio("TestName", "testBrend", false);
         output = new ByteArrayOutputStream();
         PrintStream stream = new PrintStream(output);
         System.setOut(stream);
@@ -74,13 +73,29 @@ public class CabrioTest extends TestCase {
         cabrioTest.stop();
         String result = output.toString();
 
-        String template = "Can't stop, TestName is stopped";
+        String template = "Can't stop, TestName is stopped\n";
 
         Assert.assertEquals(template, result);
 
         System.setOut(old);
     }
+    @Test
+    public void testCarStopIsCarRun() {
+        Cabrio cabrioTest = new Cabrio("TestName", "testBrend", false);
+        output = new ByteArrayOutputStream();
+        PrintStream stream = new PrintStream(output);
+        System.setOut(stream);
 
+        cabrioTest.setMove(true);
+        cabrioTest.stop();
 
+        String result = output.toString();
+
+        String template = "TestName stopped\n";
+
+        Assert.assertEquals(template, result);
+
+        System.setOut(old);
+    }
 
 }

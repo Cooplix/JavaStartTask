@@ -18,10 +18,19 @@ public class Cabrio {
 
     public void run() {
         if(!isMove) {
-            System.out.printf("%s run...", carName);
+            System.out.printf("%s run...\n", carName);
             isMove = true;
         } else {
-            System.out.printf("%s now running", carName);
+            System.out.printf("%s now running\n", carName);
+        }
+    }
+
+    public void stop() {
+        if(isMove) {
+            System.out.printf("%s stopped\n", carName);
+            this.isMove = false;
+        } else {
+            System.out.printf("Can't stop, %s is stopped\n", carName);
         }
     }
 
