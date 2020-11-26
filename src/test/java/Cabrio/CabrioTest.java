@@ -10,6 +10,8 @@ public class CabrioTest extends TestCase {
     private ByteArrayOutputStream output;
     private PrintStream old;
 
+
+
     @Test
     public void testCarRunIsCarStop() {
         Cabrio cabrioTest = new Cabrio("TestName", "testBrend", false);
