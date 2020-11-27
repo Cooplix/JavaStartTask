@@ -17,4 +17,6 @@ public class ShapeCalculator {
         double sideB = lineLength(p1, p4);
         return sideA * sideB;
     }
+
+
 }
