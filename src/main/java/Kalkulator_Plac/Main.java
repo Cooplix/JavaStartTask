@@ -1,5 +1,8 @@
 package Kalkulator_Plac;
 
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class Main {
     public static void main(String[] args) {
         Employee janKowalski = new Employee("Jan", "Kowalski", 3000);
@@ -11,5 +14,7 @@ public class Main {
         System.out.println(janinaKowalska.getFirstName() + " " + janinaKowalska.getLastName() + " " + "wyplata netto: " + PaymentCalculator.nettoYearPayment(janinaKowalska));
 
         System.out.println(janinaKowalska.getFirstName() + " " + janinaKowalska.getLastName() + " " + "wyplata brutto: " + PaymentCalculator.bruttoYearPayment(janinaKowalska));
+        
+
     }
 }
