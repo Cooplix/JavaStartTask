@@ -19,4 +19,13 @@ public class ShapeCalculator {
     }
 
 
+    public boolean isPointInsideCircle(Circle circle, Point point) {
+        double x = circle.getCenter().getX();
+        double y = circle.getCenter().getY();
+        double a = point.getX();
+        double b = point.getY();
+        double result = Math.pow((x-a), 2) + Math.pow((y-b), 2);
+        double radiusPow = Math.pow(circle.getRadius(), 2);
+        return result <= radiusPow;
+    }
 }
