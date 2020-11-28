@@ -6,7 +6,7 @@ public class WordsDatabase {
     private Random random = new Random();
 
     private final String[] words = {
-            "java",
+            "Java",
             "Coca-Cola",
             "Czekolada",
             "Olowek",
@@ -15,6 +15,6 @@ public class WordsDatabase {
 
     public String getRandomWord() {
         int index = random.nextInt(words.length);
-        return words[index];
+        return words[0];
     }
 }

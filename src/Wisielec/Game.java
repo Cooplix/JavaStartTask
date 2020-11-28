@@ -28,21 +28,22 @@ public class Game {
     private void play() {
         Hangman hangman = new Hangman(db.getRandomWord());
         do {
-            System.out.println("\nHaslo:");
-            String gueessWordDisplay = hangman.getGuessWordDisplay();
-            System.out.println(gueessWordDisplay);
-            System.out.println("Podaj litere:");
+            System.out.println("\nHasło:");
+            String guessWordDisplay = hangman.getGuessWordDisplay();
+            System.out.println(guessWordDisplay);
+            System.out.println("Podaj literę:");
             String line = sc.nextLine();
             char userGuess = line.charAt(0);
             hangman.checkLetter(userGuess);
-        } while (!hangman.userLost() && !hangman.userLost());
-            System.out.println();
-            if(hangman.userLost())
-                System.out.println("You are lost :((");
-            else if(hangman.userWon()) {
-                System.out.println("You are WIN!!! :)))");
-            }
-            System.out.printf("Haslo: %s\n\n", hangman.getGuessWord());
+        } while(!hangman.userLost() && !hangman.userWon());
+        System.out.println();
+        if(hangman.userLost())
+            System.out.println("LOSS!");
+
+        else if(hangman.userWon())
+            System.out.println("WIN!");
+
+        System.out.printf("Hasło: %s\n\n", hangman.getGuessWord());
 
     }
 }

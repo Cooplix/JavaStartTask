@@ -5,13 +5,13 @@ public class Hangman {
 
     private String guessWord;
     private String guessWordDisplay;
-    private int guesses;
     private char[] userGuesses;
+    private int guesses;
     private int mistakes;
 
     public Hangman(String guessWord) {
         this.guessWord = guessWord;
-        userGuesses = new char[64];
+        userGuesses = new char[32];
         generateDisplay();
     }
 
@@ -24,22 +24,22 @@ public class Hangman {
     }
 
     private void generateDisplay() {
-        StringBuilder display = new StringBuilder();
-        for(int i = 0; i < guessWord.length();i++) {
+        String display = "";
+        for (int i = 0; i < guessWord.length(); i++) {
             char nextChar = guessWord.charAt(i);
             if(arrayContains(userGuesses, nextChar))
-                display.append(nextChar);
+                display += nextChar;
             else if(nextChar == ' ')
-                display.append(' ');
+                display += ' ';
             else
-                display.append("*");
+                display += "*";
         }
-        this.guessWordDisplay = display.toString();
+        this.guessWordDisplay = display;
     }
 
     private boolean arrayContains(char[] array, char letter) {
-        for(char element : array) {
-            if(element == letter)
+        for (char element : array) {
+            if (element == letter)
                 return true;
         }
         return false;
@@ -54,7 +54,7 @@ public class Hangman {
     }
 
     public void checkLetter(char letter) {
-        if (!arrayContains(userGuesses, letter)) {
+        if(!arrayContains(userGuesses, letter)) {
             checkMistake(letter);
             rememberGuess(letter);
             generateDisplay();
