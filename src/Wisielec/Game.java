@@ -10,6 +10,13 @@ public class Game {
     private Scanner sc = new Scanner(System.in);
 
     public void loop() {
-
+        int option = NEXT;
+        while (option != END) {
+            play();
+            showOptions();
+            option = sc.nextInt();
+            sc.nextLine();
+        }
+        System.out.println("Bye!");
     }
 }
