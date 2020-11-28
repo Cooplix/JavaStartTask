@@ -19,4 +19,11 @@ public class Game {
         }
         System.out.println("Bye!");
     }
+
+    private void showOptions() {
+    }
+
+    private void play() {
+
+    }
 }
