@@ -24,4 +24,13 @@ public class Hangman {
     public boolean userWon() {
         return !guessWordDisplay.contains("*");
     }
+
+    public void checkLetter(char letter) {
+        if(!arrayContains(userGuesses, letter));
+        checkMistake(letter);
+        rememberGuess(letter);
+        generateDisplay();
+    }
+
+
 }
