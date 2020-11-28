@@ -29,6 +29,14 @@ public class Hangman {
         this.guessWordDisplay = display;
     }
 
+    private boolean arrayContains(char[] array, char letter) {
+        for(char element : array) {
+            if(element == letter)
+                return true;
+        }
+        return false;
+    }
+
     public boolean userLost() {
         return mistakes >= MISTAKES;
     }
@@ -45,9 +53,8 @@ public class Hangman {
     }
 
     private void checkMistake(char letter) {
-        if(guessWord.indexOf(letter) == -1) {
+        if(guessWord.indexOf(letter) == -1)
             mistakes++;
-        }
     }
 
     private void rememberGuess(char letter) {
