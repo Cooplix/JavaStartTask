@@ -5,6 +5,7 @@ public class Hangman {
 
     private String guessWord;
     private String guessWordDisplay;
+    private int guesses;
     private char[] userGuesses;
     private int mistakes;
 
@@ -15,6 +16,17 @@ public class Hangman {
     }
 
     private void generateDisplay() {
+        String display = "";
+        for(int i = 0; i < guessWord.length();i++) {
+            char nextChar = guessWord.charAt(i);
+            if(arrayContains(userGuesses, nextChar))
+                display += nextChar;
+            else if(nextChar == ' ')
+                display += ' ';
+            else
+                display += "*";
+        }
+        this.guessWordDisplay = display;
     }
 
     public boolean userLost() {
@@ -36,6 +48,11 @@ public class Hangman {
         if(guessWord.indexOf(letter) == -1) {
             mistakes++;
         }
+    }
+
+    private void rememberGuess(char letter) {
+        userGuesses[guesses] = letter;
+        guesses++;
     }
 
 
