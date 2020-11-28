@@ -32,5 +32,11 @@ public class Hangman {
         generateDisplay();
     }
 
+    private void checkMistake(char letter) {
+        if(guessWord.indexOf(letter) == -1) {
+            mistakes++;
+        }
+    }
+
 
 }
