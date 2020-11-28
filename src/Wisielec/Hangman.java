@@ -20,4 +20,8 @@ public class Hangman {
     public boolean userLost() {
         return mistakes >= MISTAKES;
     }
+
+    public boolean userWon() {
+        return !guessWordDisplay.contains("*");
+    }
 }
