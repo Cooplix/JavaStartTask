@@ -13,15 +13,15 @@ public class Arr {
         int sumX = 0;
         int sumY = 0;
 
-        for (int i = 0; i < x.length; i++ ) {
-            for(int j = 0; j < x[i].length; j++) {
-                sumX += x[i][j];
+        for (int[] ints : x) {
+            for (int anInt : ints) {
+                sumX += anInt;
             }
         }
 
-        for (int i = 0; i < y.length; i++ ) {
-            for(int j = 0; j < y[i].length; j++) {
-                sumY += y[i][j];
+        for (int[] ints : y) {
+            for (int anInt : ints) {
+                sumY += anInt;
             }
         }
 
