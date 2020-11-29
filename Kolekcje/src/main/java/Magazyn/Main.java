@@ -24,13 +24,13 @@ public class Main {
 
             controller = sc.nextInt();
 
-            if(controller == 1)
+            if(controller == WRITE)
                 write();
 
-            else if(controller == 2)
+            else if(controller == READ)
                 read();
 
-            else if(controller == 3)
+            else if(controller == EXIT)
                 break;
 
             else
@@ -48,9 +48,7 @@ public class Main {
 
 
     private  void printStats(Map<String, Integer> map) {
-        map.forEach((k, v) -> {
-            System.out.printf("%-30s (%d) %s\n", k, v, getStars(v));
-        });
+        map.forEach((k, v) -> System.out.printf("%-30s (%d) %s\n", k, v, getStars(v)));
     }
     private void read() throws FileNotFoundException {
         Map<String, Integer> products = fileUtils.readProducts();
