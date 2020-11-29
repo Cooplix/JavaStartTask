@@ -1,6 +1,8 @@
 package OperacjeNaTablicach;
 
 
+import java.util.Arrays;
+
 public class Arr {
     public static void main(String[] args) {
         int [][]  arr1 = {{1, 2, 3, 4}, {2, 4, 7}, {3, 5, 8, 4}};
@@ -9,7 +11,7 @@ public class Arr {
 
     }
 
-    public static int [][] returnLargerArray(int [][] x, int [][] y) {
+     static int [][] returnLargerArray(int [][] x, int [][] y) {
         int sumX = 0;
         int sumY = 0;
 
@@ -27,4 +29,6 @@ public class Arr {
 
         return (sumX > sumY) ? x : y;
     }
+
+
 }
