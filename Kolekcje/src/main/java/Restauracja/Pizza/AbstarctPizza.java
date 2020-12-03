@@ -1,15 +1,18 @@
-package Restauracja;
+package Restauracja.Pizza;
+
+import Restauracja.Meal;
+import Restauracja.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractSpaghetti implements Meal {
+public abstract class AbstarctPizza implements Meal {
     private final String name;
     private final List<Product> products;
     private final double price;
     private final List<Product> additionalProducts;
 
-    public AbstractSpaghetti(String name, double price) {
+    public AbstarctPizza(String name, double price) {
         this.products = new ArrayList<>();
         this.name = name;
         this.price = price;

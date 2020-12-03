@@ -1,10 +1,12 @@
-package Restauracja;
+package Restauracja.Spaghetti;
+
+import Restauracja.Product;
 
 public abstract class AbstractSpaghettiFactory {
     public final static String BOLONESE = "Bolonese";
     public final static String CARBONARA = "Carbonara";
 
-    public AbstractSpaghetti preparePizza(String aType) {
+    public AbstractSpaghetti prepareSpaghetti(String aType) {
         switch (aType) {
             case BOLONESE:
                 AbstractSpaghetti spaghettiBolonese = createInstance(BOLONESE, 24.90);

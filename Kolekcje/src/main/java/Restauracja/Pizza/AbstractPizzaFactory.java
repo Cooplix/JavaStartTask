@@ -1,4 +1,6 @@
-package Restauracja;
+package Restauracja.Pizza;
+
+import Restauracja.Product;
 
 public abstract class AbstractPizzaFactory {
     public final static String MARGHERITA = "Margherita";

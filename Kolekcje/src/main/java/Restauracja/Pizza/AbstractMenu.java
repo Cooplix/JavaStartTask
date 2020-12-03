@@ -1,4 +1,6 @@
-package Restauracja;
+package Restauracja.Pizza;
+
+import Restauracja.Meal;
 
 import java.util.ArrayList;
 

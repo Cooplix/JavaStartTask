@@ -1,5 +1,7 @@
 package Restauracja;
 
+import Restauracja.Pizza.AbstractMenu;
+
 public class DrinkMenu extends AbstractMenu {
 
     DrinkMenu() {
