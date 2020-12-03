@@ -2,6 +2,8 @@ package Restauracja;
 
 import Restauracja.Drink.Drink;
 import Restauracja.Drink.DrinkMenu;
+import Restauracja.Pizza.AbstarctPizza;
+import Restauracja.Pizza.PizzaMenu;
 
 import java.util.Scanner;
 
@@ -25,6 +27,69 @@ public class Main {
     }
 
     private static void orderPizza() {
+        System.out.println("Wybirz rodzaj ciasta");
+        System.out.println("1. Cinkie \n2. Tluste");
+
+        PizzaMenu pizzaMenu = null;
+        int roolTypeFromUser = sc.nextInt();
+        switch (roolTypeFromUser) {
+            case 1:
+                pizzaMenu = new PizzaMenu(PizzaMenu.getThinCrust());
+                break;
+            case 2:
+                pizzaMenu = new PizzaMenu(PizzaMenu.getThickDough());
+                break;
+            default:
+                throw new IllegalArgumentException("Wybrano niepoprawną opcje");
+        }
+
+        pizzaMenu.showMenu();
+        int opt;
+        AbstarctPizza orderedPizza = null;
+        while (orderedPizza == null) {
+            opt = sc.nextInt();
+            if (opt < 1 || opt > 3) {
+                System.out.println("Wybrano niepoprawną opcje");
+            } else {
+                orderedPizza = pizzaMenu.get(opt - 1);
+            }
+        }
+
+        int opt2;
+        do{
+            System.out.println("Czy życzysz sobie coś do niej dołożyć?");
+            System.out.println("1. Zamawiam");
+            System.out.println("2. 1.00 " + Product.TOMATO);
+            System.out.println("3. 0.40 " + Product.RUCOLA);
+            System.out.println("4. 0.80 " + Product.CHEESE);
+            System.out.println("5. 1.50 " + Product.BECON);
+
+            opt2 = sc.nextInt();
+            switch (opt2) {
+                case 1:
+                    break;
+                case 2:
+                    orderedPizza.addAdditional(Product.TOMATO);
+                    break;
+                case 3:
+                    orderedPizza.addAdditional(Product.RUCOLA);
+                    break;
+                case 4:
+                    orderedPizza.addAdditional(Product.CHEESE);
+                    break;
+                case 5:
+                    orderedPizza.addAdditional(Product.BECON);
+                    break;
+                default:
+                    System.out.println("Wybrano niepoprawną opcje");
+                    break;
+            }
+
+        }while (opt2 !=1);
+
+        System.out.println("Zamówiłeś pizze " + orderedPizza);
+        System.out.println("wybrane dodatki to: " + orderedPizza.getAdditionalsAsString());
+        System.out.println("do zapłaty: " + orderedPizza.getPrice());
 
     }
 

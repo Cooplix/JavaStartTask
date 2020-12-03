@@ -25,4 +25,12 @@ public class PizzaMenu extends AbstractMenu<AbstarctPizza> {
         System.out.println("PIZZA MENU");
         System.out.println("WYBIERZ PIZZE:");
     }
+
+    public static String getThickDough() {
+        return THICK_DOUGH;
+    }
+
+    public static String getThinCrust() {
+        return THIN_CRUST;
+    }
 }
