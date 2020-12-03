@@ -17,6 +17,7 @@ public abstract class AbstractPizzaFactory {
                 mafiosoPizza.addProduct(Product.CHILI);
                 mafiosoPizza.addProduct(Product.CHEESE);
                 mafiosoPizza.addProduct(Product.OREGANO);
+                return mafiosoPizza;
         }
         throw new IllegalArgumentException("I don't know this burger");
     }
