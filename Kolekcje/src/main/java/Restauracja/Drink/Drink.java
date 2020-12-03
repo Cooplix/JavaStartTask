@@ -1,4 +1,6 @@
-package Restauracja;
+package Restauracja.Drink;
+
+import Restauracja.Meal;
 
 public class Drink implements Meal {
     private final String name;
