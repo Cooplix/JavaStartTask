@@ -26,4 +26,12 @@ public class SpaghettiMenu extends AbstractMenu<AbstractSpaghetti> {
         System.out.println("PASTA MENU");
         System.out.println("WYBIERZ PASTE:");
     }
+
+    public static String getPastaLunga() {
+        return PASTA_LUNGA;
+    }
+
+    public static String getPastaCorta() {
+        return PASTA_CORTA;
+    }
 }

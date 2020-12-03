@@ -20,7 +20,7 @@ public abstract class AbstractSpaghettiFactory {
                 spaghettiCarbonara.addProduct(Product.OREGANO);
                 return spaghettiCarbonara;
         }
-        throw new IllegalArgumentException("I don't know this burger");
+        throw new IllegalArgumentException("I don't know this spaghetti");
     }
     protected abstract AbstractSpaghetti createInstance(String aName, double aPrice);
 }

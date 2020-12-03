@@ -6,6 +6,6 @@ public class SpaghettiCortaFactory extends AbstractSpaghettiFactory {
 
     @Override
     protected AbstractSpaghetti createInstance(String aName, double aPrice) {
-        return null;
+        return new SpaghettiCorta(aName, aPrice);
     }
 }
